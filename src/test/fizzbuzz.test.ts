@@ -15,5 +15,6 @@ describe("fizzbuzz", () => {
   it("returns Buzz for multiples of five", () => {
     expect(fizzbuzz(5)).toBe("Buzz");
     expect(fizzbuzz(10)).toBe("Buzz");
+    expect(fizzbuzz(20)).toBe("Buzz");
   });
 });
