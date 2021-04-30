@@ -7,14 +7,23 @@ describe("fizzbuzz", () => {
   it("it returns the number as a string", () => {
     expect(fizzbuzz(2)).toBe("2");
   });
-  it("returns Fizz for multiples of three", () => {
-    expect(fizzbuzz(6)).toBe("Fizz");
-    expect(fizzbuzz(3)).toBe("Fizz");
-    expect(fizzbuzz(9)).toBe("Fizz");
+  it.each`
+    a
+    ${6}
+    ${3}
+    ${9}
+  `("should return Buzz when $a is used", ({ a }) => {
+    expect(fizzbuzz(a)).toEqual("Fizz");
   });
-  it("returns Buzz for multiples of five", () => {
-    expect(fizzbuzz(5)).toBe("Buzz");
-    expect(fizzbuzz(10)).toBe("Buzz");
-    expect(fizzbuzz(20)).toBe("Buzz");
+  it.each`
+    a
+    ${5}
+    ${10}
+    ${20}
+  `("should return Buzz when $a is used", ({ a }) => {
+    expect(fizzbuzz(a)).toEqual("Buzz");
+  });
+  it("it returns FizzBuzz when 15 is used", () => {
+    expect(fizzbuzz(15)).toBe("FizzBuzz");
   });
 });
