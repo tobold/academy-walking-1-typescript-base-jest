@@ -1,3 +1,3 @@
 export function fizzbuzz(number: number) {
-  return "1"
+  return number.toString();
 }

@@ -7,4 +7,7 @@ describe("fizzbuzz", () => {
   it("it returns the number as a string", () => {
     expect(fizzbuzz(2)).toBe("2");
   });
+  it("returns Fizz for multiples of three", () => {
+    expect(fizzbuzz(6)).toBe("Fizz");
+  });
 });
