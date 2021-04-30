@@ -13,9 +13,7 @@ describe("fizzbuzz", () => {
   it.each([5, 10, 20])("should return Buzz when %p is used", (number) => {
     expect(fizzbuzz(number)).toEqual("Buzz");
   });
-  it("it returns FizzBuzz when 15 is used", () => {
-    expect(fizzbuzz(15)).toBe("FizzBuzz");
-    expect(fizzbuzz(30)).toBe("FizzBuzz");
-    expect(fizzbuzz(45)).toBe("FizzBuzz");
+  it.each([15, 30, 45])("it returns FizzBuzz when %p is used", (number) => {
+    expect(fizzbuzz(number)).toBe("FizzBuzz");
   });
 });
