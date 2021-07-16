@@ -28,7 +28,7 @@ export class Rover {
     this.grid = grid;
     this.position = startingPosition;
   }
-  
+
   manoeuver(movement: string): Position {
     const commands = movement.split('') as Command[]
     commands.forEach(command => {
