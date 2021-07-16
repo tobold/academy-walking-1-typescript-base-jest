@@ -4,7 +4,8 @@ describe('Rover', () => {
   it.each([
     ['M', {x: 0, y: 1, direction: Direction.North}],
     ['MM', {x: 0, y: 2, direction: Direction.North}],
-    ['R', {x: 0, y: 0, direction: Direction.East}]
+    ['R', {x: 0, y: 0, direction: Direction.East}],
+    ['L', {x: 0, y: 0, direction: Direction.West}]
   ])
   ('should accept %s and return %s', (input, output) => {
     const grid: Grid = {length: 10, width: 10}

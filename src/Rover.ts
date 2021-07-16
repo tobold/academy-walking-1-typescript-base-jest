@@ -10,6 +10,18 @@ export enum Direction {
   West,
 }
 
+// let directionMapper = {
+//     0 : Direction.North,
+//     1 : Direction.East,
+//     2 : Direction.South,
+//     3 : Direction.West,
+// }
+//
+// let commandDirectionMapper = {
+//     'L' : -1,
+//     'R' : 1,
+// }
+
 export interface Position {
   x: number
   y: number
@@ -17,7 +29,9 @@ export interface Position {
 }
 
 enum Command {
-  M = 'M'
+  M = 'M',
+  Left = 'L',
+  Right = 'R',
 }
 
 export class Rover {
@@ -32,7 +46,13 @@ export class Rover {
   manoeuver(movement: string): Position {
     const commands = movement.split('') as Command[]
     commands.forEach(command => {
-      this.position.y += 1
+      switch (command) {
+          case Command.Right:
+              this.position.direction = Direction.East;
+              break;
+          default:
+              this.position.y += 1
+      }
     })
     return this.position;
   }
