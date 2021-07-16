@@ -48,7 +48,12 @@ export class Rover {
     commands.forEach((command: Command) => {
       const currentDirection = directionMapper[this.position.direction]
       if (command === Command.M) {
-        this.position.y += 1
+        if (this.position.direction == Direction.East) {
+            this.position.x += 1
+        } else {
+            this.position.y += 1
+        }
+
         return
       }
       this.position.direction = currentDirection + commandDirectionMapper[command]
