@@ -16,24 +16,32 @@ describe("Katacombs", () => {
 
     it("should show you the title and description of the starting location", () => {
       const response = katacombs.start(BasicWorld);
-      expect(response).toEqual(`LOST IN SHOREDITCH.
-YOU ARE STANDING AT THE END OF BRICK LANE BEFORE A SMALL BRICK BUILDING CALLED THE OLD TRUMAN BREWERY. 
-AROUND YOU IS A FOREST OF INDIAN RESTAURANTS. 
-A SMALL STREAM OF CRAFTED BEER FLOWS OUT OF THE BUILDING AND DOWN A GULLY.`);
+      expect(response).toEqual("LOST IN SHOREDITCH.\nYOU ARE STANDING AT THE END OF BRICK LANE BEFORE A SMALL BRICK BUILDING CALLED THE OLD TRUMAN BREWERY. AROUND YOU IS A FOREST OF INDIAN RESTAURANTS. A SMALL STREAM OF CRAFTED BEER FLOWS OUT OF THE BUILDING AND DOWN A GULLY.");
     });
 
-    describe("describes where you look", () => {
+    describe("should be able to look", () => {
       it("north", () => {
         katacombs.start(BasicWorld);
         const response = katacombs.execute("LOOK N");
-        expect(response).toEqual(`BAGELSHOP.
-SELLS BAGELS AND CAKES.`);
+        expect(response).toEqual("BAGELSHOP.\nSELLS BAGELS AND CAKES.");
       });
+
       it("east", () => {
         katacombs.start(BasicWorld);
         const response = katacombs.execute("LOOK E");
-        expect(response).toEqual(`RICHMIX.
-CINEMA.`);
+        expect(response).toEqual("RICHMIX.\nCINEMA.");
+      });
+
+      it("south", () => {
+        katacombs.start(BasicWorld);
+        const response = katacombs.execute("LOOK S");
+        expect(response).toEqual("LIVERPOOL ST STATION.\nTRAINS.");
+      });
+
+      it("west", () => {
+        katacombs.start(BasicWorld);
+        const response = katacombs.execute("LOOK W");
+        expect(response).toEqual('ALDGATE.\nLOTS OF NEW BUILDINGS.');
       });
     });
   });

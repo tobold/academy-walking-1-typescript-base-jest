@@ -1,5 +1,5 @@
 class Location {
-  constructor(private description: string, private title: string) {
+  constructor(private title: string, private description: string) {
   }
 }
 
@@ -17,7 +17,7 @@ export const BasicWorld: World = [
     new Location('RICHMIX', 'CINEMA')
   ],[
     new Location('SOMEWHERE', 'A'),
-    new Location('SOMEWHEREELSE', 'B'),
+    new Location('ALDGATE', 'LOTS OF NEW BUILDINGS'),
     new Location('SOMEWHEREELSEELSE', 'C')
   ]
 ]
