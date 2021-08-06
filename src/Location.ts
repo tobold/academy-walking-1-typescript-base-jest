@@ -1,5 +1,10 @@
-class Location {
-  constructor(private title: string, private description: string) {}
+export class Location {
+  constructor(public title: string, public description: string) {
+  }
+
+  toString() {
+    return `${this.title}.\n${this.description}.`;
+  }
 }
 
 export type World = Location[][];
